@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>thuanny's site</title>
+    <link rel="icon" type="image/x-icon" href="/images/user.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@900&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    
+    <div class="container-fluid">
+      <nav class="navbar navbar-inverse">
+        <div class = "mobile-menu">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </div>
+        <div class="container-fluid">
+          <ul class="nav navbar-nav">
+            <li><a id="len1" class="hoverable" href="#">Home</a></li>
+            <li><a id="len2" class="hoverable" href="#">About</a></li>
+            <li><a id="len3" class="hoverable" href="#">Portfolio</a></li>
+            <li><a id="len4" class="hoverable" href="#">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+    
+    
+    <div id="app" class="page-title">
+      <header>
+        <h1>{{ title }}</h1>
+        <h2>{{ subtitle }}</h2>
+    </header>
+
+    <main>
+        <p>{{ message }}</p>
+    </main>
+
+    </div>
+    <script type="module" src="app.js"></script>
+    <script src="mobile-navbar.js" ></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <p> hey, how are you?</p>
+  </div>
+  </body>
+</html>
