@@ -73,7 +73,19 @@
         <main>
             <section class="bg-white dark:bg-gray-800 shadow-md rounded-lg p-6 mb-8">
                 <h3 class="text-2xl font-semibold mb-4 text-gray-800 dark:text-white">About Me</h3>
-                <p class="text-gray-700 dark:text-gray-300">Hello! I'm a passionate Back-End Developer and Data Scientist with expertise in Python, PHP, and a variety of frameworks such as Laravel, Django, and Flask. I have a strong foundation in designing and implementing scalable, efficient APIs (REST), working with SQL databases, and following best practices in version control with Git Flow.\n\nThroughout my career, I've been dedicated to delivering robust and efficient back-end solutions, always focusing on clean, maintainable code. My interest in data science has also led me to develop skills in data analysis and machine learning, allowing me to tackle complex data-driven problems with creativity and precision.\n\nWith a solid understanding of software architecture and a passion for learning new technologies, I strive to bridge the gap between data and decision-making, creating impactful solutions that drive business success.\n\nI'm constantly seeking opportunities to enhance my skills and contribute to meaningful projects. <br> Let's connect!</p>
+                <p class="text-gray-700 dark:text-gray-300">
+                    <span id="short-text">
+                        Hello! I'm a passionate Back-End Developer and Data Scientist with expertise in Python, PHP, and a variety of frameworks such as Laravel, Django, and Flask. I have a strong foundation in designing and implementing scalable, efficient APIs (REST), working with SQL databases, and following best practices in version control with Git Flow.
+                        <span id="read-more-dots">...</span>
+                    </span>
+                    <span id="full-text" class="hidden">
+                        Hello! I'm a passionate Back-End Developer and Data Scientist with expertise in Python, PHP, and a variety of frameworks such as Laravel, Django, and Flask. I have a strong foundation in designing and implementing scalable, efficient APIs (REST), working with SQL databases, and following best practices in version control with Git Flow.Throughout my career, I've been dedicated to delivering robust and efficient back-end solutions, always focusing on clean, maintainable code. My interest in data science has also led me to develop skills in data analysis and machine learning, allowing me to tackle complex data-driven problems with creativity and precision.With a solid understanding of software architecture and a passion for learning new technologies, I strive to bridge the gap between data and decision-making, creating impactful solutions that drive business success.I'm constantly seeking opportunities to enhance my skills and contribute to meaningful projects.
+Let's connect! 
+                    </span>
+                </p>
+                <button id="read-more-btn" class="mt-4 text-blue-500 hover:text-blue-600 focus:outline-none">
+                    Read more
+                </button>
             </section>
 
             <section class="bg-white dark:bg-gray-800 shadow-md rounded-lg p-6 mb-8">
@@ -97,16 +109,18 @@
                     </div>
                     <div class="flex flex-col items-center">
                         <img src="images/sql.png" alt="MySQL" class="w-16 h-16 object-contain mb-2">
-                        <span class="text-sm text-gray-700 dark:text-gray-300">MySQL</span>
+                        <span class="text-sm text-gray-700 dark:text-gray-300">SQL</span>
                     </div>
                     <div class="flex flex-col items-center">
                         <img src="images/restapi.png" alt="RESTful APIs" class="w-16 h-16 object-contain mb-2">
-                        <span class="text-sm text-gray-700 dark:text-gray-300">RESTful APIs</span>
+                    <span class="text-sm text-gray-700 dark:text-gray-300">RESTful APIs</span>
                     </div>
                     <div class="flex flex-col items-center">
                         <img src="images/gitflow.png" alt="Git" class="w-16 h-16 object-contain mb-2">
                         <span class="text-sm text-gray-700 dark:text-gray-300">Git</span>
                     </div>
+                    <div class="flex flex-col items-center">
+                        <div class="swiper-pagination"></div>
                 </div>
             </section>
 
@@ -117,9 +131,7 @@
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
                             <a href="https://www.instagram.com/p/Czj9h47rdHZ/" target="_blank" rel="noopener noreferrer" class="block w-full h-full">
-                                <!-- <div class="aspect-w-16 aspect-h-9 max-w-sm mx-auto"> -->
-                                    <img src="images/minicursopython.png" alt="minicursopython" class="rounded object-cover">
-                                <!-- </div> -->
+                                <img src="images/minicursopython.png" alt="minicursopython" class="rounded object-cover">
                             </a>
                         </div>
                         <div class="swiper-slide">
@@ -150,10 +162,16 @@
                 </div>
             </section>
 
+            <!-- Adicionando uma div com margem para criar um espaço entre as seções -->
+            <div class="mb-8"></div>
+
             <section class="bg-white dark:bg-gray-800 shadow-md rounded-lg p-6">
                 <h3 class="text-2xl font-semibold mb-4 text-gray-800 dark:text-white">Contact</h3>
                 <p class="text-gray-700 dark:text-gray-300">Feel free to reach out to me for any backend development opportunities or collaborations.</p>
                 <a href="https://www.instagram.com/thuannyst/" target="_blank" rel="noopener noreferrer" class="inline-block mt-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition duration-300">Contact Me</a>
+            </section>
+                        
+                </div>
             </section>
         </main>
     </div>
@@ -230,6 +248,26 @@
                         slidesPerView: 3,
                     },
                 },
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const readMoreBtn = document.getElementById('read-more-btn');
+            const shortText = document.getElementById('short-text');
+            const fullText = document.getElementById('full-text');
+            const readMoreDots = document.getElementById('read-more-dots');
+
+            readMoreBtn.addEventListener('click', function() {
+                if (fullText.classList.contains('hidden')) {
+                    fullText.classList.remove('hidden');
+                    shortText.classList.add('hidden');
+                    readMoreBtn.textContent = 'Read less';
+                } else {
+                    fullText.classList.add('hidden');
+                    shortText.classList.remove('hidden');
+                    readMoreBtn.textContent = 'Read more';
+                }
             });
         });
     </script>
